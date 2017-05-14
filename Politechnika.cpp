@@ -14,9 +14,15 @@ Politechnika::Politechnika()
 	nazwa = "Politechnika";
 	liczbaLaboratoriów = 3;
 	liczbaUczelni++;
+	rodzajSal = "Sale wykladowe i Laboratoria";
 }
 
 
+
+void Politechnika::wypiszInformacje() {
+
+	cout << "Nazwa budynku: " << nazwa << endl << "Rodzaj sal: " << rodzajSal << endl << "Liczba sal: " << liczbaSalWykladowych << endl << "Liczba laboratoriow: " << liczbaLaboratoriów << endl;
+}
 
 void Politechnika::zmienLiczbeSal(int nowa_liczba) {
 	liczbaLaboratoriów = nowa_liczba;

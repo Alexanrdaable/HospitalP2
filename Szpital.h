@@ -16,11 +16,17 @@ private:
 	string nazwa;
 	int liczbaPacjentow;
 	int liczbaOddzialow;
-	
+	string rodzajSal;
 	
 
 public:
-	
+	void wypiszInformacje();
+
+
+
+
+
+
 
 	void UstawNazwe(string nazwa);
 	void UstawParametry(Parametry &p);

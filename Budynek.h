@@ -13,15 +13,16 @@ public:
 	Budynek();
 	///destruktor wirtualny
 	virtual ~Budynek();
-	///metody wirtualna
+	///metody wirtualne
 
-
+	
 	//void UstawNazwe(string nazwa);
 	//void UstawParametry(Parametry &p);
 	//Dane PobierzDane();
 
 
-
+	///Metoda wirtualna, s³u¿¹ca do wypisywania informacji na temat danego obiektu
+	virtual void wypiszInformacje() = 0;
 
 	///Metoda wirtualna, s³u¿¹ca do zmiany liczby odpowiedniego typu pomieszczenia, zale¿nie od typu budynku
 	virtual void zmienLiczbeSal(int liczba) = 0;

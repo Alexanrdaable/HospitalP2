@@ -10,9 +10,11 @@ protected:
 	static int liczbaUczelni;
 	int liczbaSalWykladowych;
 	string nazwa;
+	string rodzajSal;
 public:
 	Uczelnia();
 	~Uczelnia();
 
+	void wypiszInformacje();
 	void zmienLiczbeSal(int nowa_liczba);
 };

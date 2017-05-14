@@ -16,7 +16,7 @@ Szpital::Szpital()
 
 	nazwa = "Szpital";
 	int liczbaOddzialow = 5;
-
+	string rodzajSal = "Oddzialy szpitalne";
 	liczbaSzpitali++;
 
 #ifdef _DEBUG
@@ -105,7 +105,7 @@ void Szpital::DodajPacjenta(string imie, string nazwisko, int nr, int lo)
 {
 	Pacjent nowyPacjent = Pacjent(imie, nazwisko, nr, lo);
 
-	Pacjent *tempPacjent = new Pacjent[liczbaPacjentow + 1];			//z lab.
+	Pacjent *tempPacjent = new Pacjent[liczbaPacjentow + 1];			
 
 	for (int i = 0; i < liczbaPacjentow; i++)
 		tempPacjent[i] = pacjenci[i];
@@ -172,6 +172,23 @@ void Szpital::zmienLiczbeSal(int nowa_liczba) {
 	liczbaOddzialow = nowa_liczba;
 
 }
+
+
+
+
+
+
+void Szpital::wypiszInformacje() {
+
+	cout << "Nazwa budynku: " << nazwa << endl << "Rodzaj sal: " << rodzajSal << endl << "Liczba sal: " << liczbaOddzialow << endl;
+}
+
+
+
+
+
+
+
 
 Szpital::~Szpital()
 {

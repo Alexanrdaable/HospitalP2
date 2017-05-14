@@ -14,10 +14,14 @@ Uczelnia::Uczelnia()
 	nazwa = "Uczelnia";
 	liczbaSalWykladowych = 15;
 	liczbaUczelni++;
+	rodzajSal = "Sale wykladowe";
 
 }
 
+void Uczelnia::wypiszInformacje() {
 
+	cout << "Nazwa budynku: " << nazwa << endl << "Rodzaj sal: " << rodzajSal << endl << "Liczba sal: " << liczbaSalWykladowych << endl;
+}
 
 void Uczelnia::zmienLiczbeSal(int nowa_liczba) {
 	liczbaSalWykladowych = nowa_liczba;
