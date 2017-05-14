@@ -13,7 +13,6 @@ Uczelnia::Uczelnia()
 #endif
 	nazwa = "Uczelnia";
 	liczbaSalWykladowych = 15;
-	liczbaUczelni++;
 	rodzajSal = "Sale wykladowe";
 
 }
@@ -54,9 +53,12 @@ void Uczelnia::zapiszDoPliku(Uczelnia &uczelnia) {
 
 }
 
-
-
-
+void Uczelnia::odczytZPliku(Uczelnia &uczelnia) {
+	ifstream plik(nazwaUczelnia);
+	plik >> uczelnia;
+	plik.close();
+	cout << "Zosta³ wykonany odczyt z pliku Uczelnia.txt" << endl;
+}
 
 
 

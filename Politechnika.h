@@ -14,7 +14,7 @@ public:
 
 
 	void zapiszDoPliku(Politechnika &politechnika);
-	//void odczytZPliku(Politechnika &politechnika);
+	void odczytZPliku(Politechnika &politechnika);
 
 	void zmienLiczbeSal(int nowa_liczba);
 	void wypiszInformacje();

@@ -23,7 +23,7 @@ public:
 	void wypiszInformacje();
 	void zmienLiczbeSal(int nowa_liczba);
 	void zapiszDoPliku(Szpital &szpital);
-
+	void odczytZPliku(Szpital &szpital);
 
 
 
