@@ -185,6 +185,29 @@ void Szpital::wypiszInformacje() {
 
 
 
+std::ostream& operator << (std::ostream &s, Szpital &szpital) {
+	s << szpital.nazwa << endl << szpital.rodzajSal << endl << szpital.liczbaOddzialow;
+	return s;
+}
+
+
+std::istream& operator >> (std::istream& s, Szpital &szpital) {
+	s >> szpital.nazwa >> szpital.rodzajSal >> szpital.liczbaOddzialow;
+	return s;
+}
+
+
+string nazwaSzpitala = "Szpital.txt"; ///<Nazwa pliku do zapisu stanu obiektu
+
+void Szpital::zapiszDoPliku(Szpital &szpital) {
+
+	ofstream plik_wyjsciowy(nazwaSzpitala);
+	plik_wyjsciowy << szpital;
+	plik_wyjsciowy.close();
+	cout << "Zosta³ wykonany zapis obiektu do pliku Szpital.txt" ;
+
+}
+
 
 
 

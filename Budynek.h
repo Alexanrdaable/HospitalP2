@@ -13,7 +13,7 @@ public:
 	Budynek();
 	///destruktor wirtualny
 	virtual ~Budynek();
-	///metody wirtualne
+	///metody wirtualne:
 
 	
 	//void UstawNazwe(string nazwa);

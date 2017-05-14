@@ -2,6 +2,7 @@
 #include "Budynek.h"
 #include <iostream>
 #include <fstream>
+using namespace std;
 
 class Uczelnia : public Budynek {
 
@@ -17,4 +18,9 @@ public:
 
 	void wypiszInformacje();
 	void zmienLiczbeSal(int nowa_liczba);
+	void zapiszDoPliku(Uczelnia &uczelnia);
+
+
+	friend ostream& operator << (std::ostream &s, Uczelnia &uczelnia);
+	friend istream& operator >> (std::istream& s, Uczelnia &uczelnia);
 };

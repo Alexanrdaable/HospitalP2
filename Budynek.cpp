@@ -12,13 +12,13 @@ Budynek::Budynek() {
 	rodzaj_budynku = "Nieokreslony";
 }
 
-///Zdefiniowany operator strumieniowy do wypisywania rodzaju budynku 
+
 std::ostream& operator << (std::ostream &s, Budynek &budynek) {
 	s << budynek.rodzaj_budynku;
 	return s;
 }
 
-///Zdefiniowany operator strumieniowy do wpisywania rodzaju budynku 
+
 std::istream& operator >> (std::istream &s, Budynek &budynek) {
 	s >> budynek.rodzaj_budynku;
 	return s;

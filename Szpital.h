@@ -21,7 +21,8 @@ private:
 
 public:
 	void wypiszInformacje();
-
+	void zmienLiczbeSal(int nowa_liczba);
+	void zapiszDoPliku(Szpital &szpital);
 
 
 
@@ -32,9 +33,6 @@ public:
 	void UstawParametry(Parametry &p);
 	Dane PobierzDane();
 	void UstawDane(Dane &d);
-
-	void zmienLiczbeSal(int nowa_liczba);
-
 
 	Szpital();	//konst.
 	Szpital(string nazwa_Szpitala, int liczba_Pacjentow);
@@ -55,5 +53,6 @@ public:
 	Pacjent& operator[](int i);
 	bool operator==(const Szpital &d);
 	friend bool operator==(const Szpital &d1, const Szpital &d2);
-
+	friend ostream& operator << (std::ostream &s, Szpital &szpital);
+	friend istream& operator >> (std::istream& s, Szpital &szpital);
 };
