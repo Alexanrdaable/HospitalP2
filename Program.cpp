@@ -26,6 +26,7 @@ int main() {
 		switch (wybor)
 		{
 		case 0:
+			
 			cout << endl;
 			cout << "INTERFEJS UZYTKOWNIKA" << endl <<endl;
 			cout << "Dostepne operacje do wyboru:" << endl;
@@ -35,8 +36,9 @@ int main() {
 			cout << "4. Odczyt informacji z pliku tekstowego" << endl;
 			cout << "5. Wprowadz modyfikacje w obiekcie" << endl;
 			cout << "6. Wykorzystanie wlasciwosci polimorfizmu" << endl;
-			
+			cout << "7. Wykorzystanie metod wirtualnych na wektorach obiektow" << endl;
 			cout << "8: Zamknij program" << endl;
+			cout << "0: Wypisz opcje programu" << endl;
 			cout << endl;
 			cout << "Wybrane dzialanie programu: ";
 			cin >> wybor;
@@ -157,7 +159,35 @@ int main() {
 			break;
 
 		}
+		case 7:
+		{
+			system("cls");
+			cout << "***Wykorzystanie metod wirtualnych na wektorach obiektow***" << endl;
 
+			Szpital szpital;
+			Uczelnia uczelnia;
+			Politechnika politechnika;
+
+			vector <Budynek*> budynki_wektor;
+			budynki_wektor.push_back(&szpital);
+			budynki_wektor.push_back(&uczelnia);
+			budynki_wektor.push_back(&politechnika);
+
+
+			for (int i = 0; i < 3; i++) {
+				cout << "Obiekt nr " << i << endl;
+				cout << "Stan przed: " << endl;
+				budynki_wektor[i]->wypiszInformacje();
+				budynki_wektor[i]->zmienLiczbeSal(i);
+				cout << "Stan po zmianie: " << endl;
+				budynki_wektor[i]->wypiszInformacje();
+				cout << endl << endl;
+			}
+
+			wybor = 0;
+			break;
+
+		}
 
 	
 		default:
