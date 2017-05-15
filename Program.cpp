@@ -34,6 +34,7 @@ int main() {
 			cout << "3. Zapis informacji do pliku tekstowego" << endl;
 			cout << "4. Odczyt informacji z pliku tekstowego" << endl;
 			cout << "5. Wprowadz modyfikacje w obiekcie" << endl;
+			cout << "6. Wykorzystanie wlasciwosci polimorfizmu" << endl;
 			
 			cout << "8: Zamknij program" << endl;
 			cout << endl;
@@ -128,15 +129,40 @@ int main() {
 			wybor = 0;
 			break;
 		
+		case 6:
+		{
+			system("cls");
+			cout << "***Polimorfizm***" << endl;
 
+			Szpital szpital;
+			Uczelnia uczelnia;
+			Politechnika politechnika;
 
+			Budynek *budynki[3];
+			budynki[0] = &szpital;
+			budynki[1] = &uczelnia;
+			budynki[2] = &politechnika;
 
+			for (int i = 0; i < 3; i++) {
+				cout << "Obiekt nr " << i << endl;
+				cout << "Stan przed: " << endl;
+				budynki[i]->wypiszInformacje();
+				budynki[i]->zmienLiczbeSal(i);
+				cout << "Stan po zmianie: " << endl;
+				budynki[i]->wypiszInformacje();
+				cout << endl << endl;
+			}
+
+			wybor = 0;
+			break;
+
+		}
 
 
 	
 		default:
 			system("cls");
-			cout << "Wybrano niepoprawna opcje." << endl;
+			cout << "Nalezy wybrac ponownie" << endl;
 			wybor = 0;
 		}
 
