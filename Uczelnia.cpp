@@ -29,6 +29,27 @@ void Uczelnia::zmienLiczbeSal(int nowa_liczba) {
 
 
 
+string nazwaUczelnia = "Uczelnia.txt"; ///<Nazwa pliku do zapisu stanu obiektu
+
+void Uczelnia::zapiszDoPliku(Uczelnia &uczelnia) {
+
+	ofstream plik_wyjsciowy(nazwaUczelnia);
+	plik_wyjsciowy << uczelnia;
+	plik_wyjsciowy.close();
+	cout << "Zapis wykonany poprawnie!" << endl;
+
+}
+
+void Uczelnia::odczytZPliku(Uczelnia &uczelnia) {
+	ifstream plik(nazwaUczelnia);
+	plik >> uczelnia;
+	plik.close();
+	cout << "Odczyt wykonany poprawnie!" << endl;
+}
+
+
+
+
 std::ostream& operator << (std::ostream &s, Uczelnia &uczelnia) {
 	s << uczelnia.nazwa << endl << uczelnia.rodzajSal << endl << uczelnia.liczbaSalWykladowych;
 	return s;
@@ -38,30 +59,6 @@ std::istream& operator >> (std::istream& s, Uczelnia &uczelnia) {
 	s >> uczelnia.nazwa >> uczelnia.rodzajSal >> uczelnia.liczbaSalWykladowych;
 	return s;
 }
-
-
-
-
-string nazwaUczelnia = "Uczelnia.txt"; ///<Nazwa pliku do zapisu stanu obiektu
-
-void Uczelnia::zapiszDoPliku(Uczelnia &uczelnia) {
-
-	ofstream plik_wyjsciowy(nazwaUczelnia);
-	plik_wyjsciowy << uczelnia;
-	plik_wyjsciowy.close();
-	cout << "Zosta³ wykonany zapis obiektu do pliku Uczelnia.txt";
-
-}
-
-void Uczelnia::odczytZPliku(Uczelnia &uczelnia) {
-	ifstream plik(nazwaUczelnia);
-	plik >> uczelnia;
-	plik.close();
-	cout << "Zosta³ wykonany odczyt z pliku Uczelnia.txt" << endl;
-}
-
-
-
 
 
 

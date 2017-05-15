@@ -12,10 +12,8 @@ Politechnika::Politechnika()
 #endif
 	nazwa = "Politechnika";
 	liczbaLaboratoriów = 3;
-	liczbaUczelni++;
 	rodzajSal = "Sale wykladowe i Laboratoria";
 }
-
 
 
 void Politechnika::wypiszInformacje() {
@@ -41,17 +39,23 @@ std::istream& operator >> (std::istream& s, Politechnika &politechnika) {
 
 
 
-string nazwaPolitechnika = "Politechnika.txt"; ///<Nazwa pliku do zapisu stanu obiektu
+string nazwaPolitechnika = "Politechnika.txt"; ///Nazwa pliku do zapisu stanu obiektu
 
 void Politechnika::zapiszDoPliku(Politechnika &politechnika) {
 
 	ofstream plik_wyjsciowy(nazwaPolitechnika);
 	plik_wyjsciowy << politechnika;
 	plik_wyjsciowy.close();
-	cout << "Zosta³ wykonany zapis obiektu do pliku Politechnika.txt";
+	cout << "Zapis wykonany poprawnie!" << endl;
 
 }
 
+void Politechnika::odczytZPliku(Politechnika &politechnika) {
+	ifstream plik(nazwaPolitechnika);
+	plik >> politechnika;
+	plik.close();
+	cout << "Odczyt wykonany poprawnie!" << endl;
+}
 
 
 Politechnika::~Politechnika()

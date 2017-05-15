@@ -162,9 +162,9 @@
     <ClCompile Include="Budynek.cpp" />
     <ClCompile Include="Dane.cpp" />
     <ClCompile Include="Politechnika.cpp" />
-    <ClCompile Include="Program.cpp" />
     <ClCompile Include="Pacjent.cpp" />
     <ClCompile Include="Parametry.cpp" />
+    <ClCompile Include="Program.cpp" />
     <ClCompile Include="Szpital.cpp" />
     <ClCompile Include="Uczelnia.cpp" />
   </ItemGroup>

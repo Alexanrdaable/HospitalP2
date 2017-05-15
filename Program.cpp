@@ -13,14 +13,14 @@ using namespace std;
 
 int wybor;
 int liczba;
-
+int obiekt = 1;
 
 int main() {
 
 	Szpital budynek1;
 	Uczelnia budynek2;
 	Politechnika budynek3;
-	int obiekt = 1;
+	
 
 	do {
 		switch (wybor)
@@ -28,7 +28,7 @@ int main() {
 		case 0:
 			
 			cout << endl;
-			cout << "INTERFEJS UZYTKOWNIKA" << endl <<endl;
+			cout << ">>>INTERFEJS UZYTKOWNIKA<<<" << endl <<endl;
 			cout << "Dostepne operacje do wyboru:" << endl;
 			cout << "1. Wybor obiektu" << endl;
 			cout << "2. Wyswietl aktualny stan" << endl;
@@ -155,7 +155,7 @@ int main() {
 				cout << endl << endl;
 			}
 
-			wybor = 0;
+			wybor =0;
 			break;
 
 		}
@@ -192,7 +192,7 @@ int main() {
 	
 		default:
 			system("cls");
-			cout << "Nalezy wybrac ponownie" << endl;
+			cout << "Nalezy wybrac ponownie, poniewaz wybor byl bledny" << endl;
 			wybor = 0;
 		}
 

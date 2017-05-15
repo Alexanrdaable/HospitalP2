@@ -1,0 +1,3 @@
+Szpital
+Oddzialy szpitalne
+5

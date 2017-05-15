@@ -111,8 +111,6 @@ Dane Szpital::PobierzDane() {
 }
 
 
-
-
 Parametry Szpital::ilesal()
 {
 	return this-> parametry;
@@ -158,7 +156,6 @@ void Szpital::zmienLiczbeSal(int nowa_liczba) {
 	liczbaOddzialow = nowa_liczba;
 
 }
-
 
 
 
