@@ -1,6 +1,7 @@
 #include "Szpital.h"
 #include <iostream>
 #include<string>
+#include <vector>
 using namespace std;
 
 
@@ -11,12 +12,18 @@ string nazwa_pliku = "Szpital.txt";
 
 Szpital::Szpital()
 {
-	int liczbaPacjentow = 0;
-	pacjenci = new Pacjent[liczbaPacjentow];
+	int liczbaPacjentow = 10;	
 
-	nazwa = "Szpital";
-	int liczbaOddzialow = 5;
-	string rodzajSal = "Oddzialy szpitalne";
+	vector <int> pacjenci;
+	int x = 0;
+	for (int i = 0; i < liczbaPacjentow; i++)
+	{
+		pacjenci.push_back(i);
+	}
+
+	nazwa = "Szpital";	
+	liczbaOddzialow = 5;
+	rodzajSal = "Oddzialy szpitalne";
 	liczbaSzpitali++;
 
 #ifdef _DEBUG
@@ -28,7 +35,13 @@ Szpital::Szpital()
 Szpital::Szpital(string nazwa_Szpitala, int liczba_Pacjentow)
 {
 	int liczbaPacjentow = 0;
-	pacjenci = new Pacjent[liczbaPacjentow];
+	vector <int> pacjenci;
+	int x = 0;
+	for (int i = 0; i < liczbaPacjentow; i++)
+	{
+		pacjenci.push_back(i);
+	}
+	
 	parametry = Parametry();
 	dane = Dane();
 
@@ -59,13 +72,13 @@ Szpital::Szpital(Szpital &szpital)
 	liczbaOddzialow = szpital.liczbaOddzialow;
 	parametry = szpital.parametry;
 	dane = szpital.dane;
-
-	pacjenci = new Pacjent[liczbaPacjentow];
-
+	vector <int> pacjenci;
 	for (int i = 0; i < liczbaPacjentow; i++)
 	{
-		pacjenci[i] = szpital.pacjenci[i];
+		pacjenci.push_back(i);
 	}
+
+	
 
 #ifdef _DEBUG
 	cout << "Konstruktor kopiujacy klasy Szpital." << endl;
@@ -97,26 +110,7 @@ Dane Szpital::PobierzDane() {
 	return this->dane;
 }
 
-Pacjent Szpital::PobierzPacjenta() {
-	return this->pacjenci[0];
-}
 
-void Szpital::DodajPacjenta(string imie, string nazwisko, int nr, int lo)
-{
-	Pacjent nowyPacjent = Pacjent(imie, nazwisko, nr, lo);
-
-	Pacjent *tempPacjent = new Pacjent[liczbaPacjentow + 1];			
-
-	for (int i = 0; i < liczbaPacjentow; i++)
-		tempPacjent[i] = pacjenci[i];
-
-
-	delete[] pacjenci;
-	pacjenci = tempPacjent;
-	pacjenci[liczbaPacjentow] = nowyPacjent;
-
-	liczbaPacjentow++;
-}
 
 
 Parametry Szpital::ilesal()
@@ -158,21 +152,12 @@ bool Szpital::operator==(const Szpital &d)
 }
 
 
-Pacjent& Szpital::operator[](int i)
-{
-	if (i >= 0 && i < liczbaPacjentow)
-		return pacjenci[i];
-	else
-	{
-		cout << "Probujesz znalezc nieistniejacego pacjenta." << endl;
-	}	
-}
+
 
 void Szpital::zmienLiczbeSal(int nowa_liczba) {
 	liczbaOddzialow = nowa_liczba;
 
 }
-
 
 
 
@@ -204,11 +189,16 @@ void Szpital::zapiszDoPliku(Szpital &szpital) {
 	ofstream plik_wyjsciowy(nazwaSzpitala);
 	plik_wyjsciowy << szpital;
 	plik_wyjsciowy.close();
-	cout << "Zosta³ wykonany zapis obiektu do pliku Szpital.txt" ;
+	cout << "Zapis wykonany poprawnie!" <<endl ;
 
 }
 
-
+void Szpital::odczytZPliku(Szpital &szpital) {
+	ifstream plik(nazwaSzpitala);
+	plik >> szpital;
+	plik.close();
+	cout << "Odczyt wykonany poprawnie!" << endl;
+}
 
 
 
