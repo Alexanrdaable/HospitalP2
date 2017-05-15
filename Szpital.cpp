@@ -205,7 +205,6 @@ void Szpital::odczytZPliku(Szpital &szpital) {
 
 Szpital::~Szpital()
 {
-	delete[]pacjenci;
 	
 #ifdef _DEBUG
 	cout << "Destruktor klasy Szpital." << endl;
