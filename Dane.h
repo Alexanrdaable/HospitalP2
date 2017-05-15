@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 using namespace std;
-
+///klasa Dane zawierajaca podstawowe informacje na temat obiektu Szpital
 class Dane
 {
 private:

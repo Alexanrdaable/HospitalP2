@@ -4,31 +4,24 @@
 
 using namespace std;
 
-///klasa abstrakcyjna - pole A 
+///Klasa abstrakcyjna - pole A 
 class Budynek {
 private: 
-	string rodzaj_budynku;
+	string rodzaj_budynku;	///< okresla rodzaj budynku 
 public:
-	///konstruktor domyœlny
+	///Konstruktor domyslny
 	Budynek();
-	///destruktor wirtualny
+	///Destruktor wirtualny
 	virtual ~Budynek();
-	///metody wirtualne:
-
 	
-	//void UstawNazwe(string nazwa);
-	//void UstawParametry(Parametry &p);
-	//Dane PobierzDane();
-
-
-	///Metoda wirtualna, s³u¿¹ca do wypisywania informacji na temat danego obiektu
+	///Metoda wirtualna, sluzaca do wypisywania informacji na temat danego obiektu
 	virtual void wypiszInformacje() = 0;
 
-	///Metoda wirtualna, s³u¿¹ca do zmiany liczby odpowiedniego typu pomieszczenia, zale¿nie od typu budynku
+	///Metoda wirtualna, sluzaca do zmiany liczby odpowiednich pomieszczen, zale¿nie od typu budynku
 	virtual void zmienLiczbeSal(int liczba) = 0;
 
-
-	///operatory strumieniowe dla klasy Budynek
+	///operator strumieniowy ostream dla klasy Budynek
 	friend std::ostream& operator << (std::ostream &s, Budynek &budynek);
+	///operator strumieniowy istream dla klasy Budynek
 	friend std::istream& operator >> (std::istream &s, Budynek &budynek);
 };

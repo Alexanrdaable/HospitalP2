@@ -2,7 +2,7 @@
 #pragma once
 #include <string>
 using namespace std;
-
+///klasa Parametry zawierajaca dane o rozmiarze szpitala
 class Parametry
 {
 private:
